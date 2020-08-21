@@ -23,14 +23,13 @@ JavaScript supports arithmetic operators for:
 
 # Logical Operator ||
 The logical OR operator `||` checks two values and returns a boolean. If one or both values are truthy, it returns `true`. If both values are falsy, it returns `false`.
+
 ``` Javascript
     true || false;        // true
     10 > 5 || 10 > 20;    // true
     false || false;       // false
     10 > 100 || 10 > 20;  // false
 ```
-
-
 | `A`    | `B`    | `A || B` |
 | ------ | ------ | -------  |
 | false  | false  |   false  |
