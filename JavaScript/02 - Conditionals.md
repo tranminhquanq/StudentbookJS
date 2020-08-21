@@ -30,8 +30,9 @@ The logical OR operator `||` checks two values and returns a boolean. If one or 
     10 > 100 || 10 > 20;  // false
 ```
 
+
 | `A`    | `B`    | `A || B` |
-| ------ | ------ | ------   |
+| ------ | ------ | -------  |
 | false  | false  |   false  |
 | false  | true   |   true   |
 | true   | false  |   true   |

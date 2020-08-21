@@ -71,7 +71,7 @@ The `.pop()` method removes the last element from an array and returns that elem
     console.log(ingredients); // ['eggs', 'flour']
 ```
 
-# Other methods
+# Other methods:
 
 1. **concat()** : The `concat()` method is used to join two or more arrays. This method does not change the existing arrays, but returns a new array, containing the values of the joined arrays.
 
@@ -193,3 +193,19 @@ The `.pop()` method removes the last element from an array and returns that elem
 > ***Note***: This method changes the length of the array. The return value of the shift method is the removed item, this method will change the original array.
 
 > ***Tip***: To remove the last item of an array, use the `pop()` method.
+
+10. Array Method `.reduce()`: The `reduce()` method reduces the array to a single value. `reduce()` method executes a provided function for each value of the array (from left-to-right). The return value of the function is stored in an accumulator (result/total).
+
+Here, the `.reduce()` method will sum all the elements of the array.
+
+``` Javascript
+    const arrayOfNumbers = [1, 2, 3, 4];
+
+    const sum = arrayOfNumbers.reduce((accumulator, currentValue) => {  
+    return accumulator + currentValue;
+    });
+
+    console.log(sum); // 10
+```
+
+> ***Note***: `reduce()` does not execute the function for array elements without values. This method does not change the original array.
