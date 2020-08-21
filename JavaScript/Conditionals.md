@@ -1,10 +1,10 @@
-> ## Control Flow
+# Control Flow
 
 Control flow is the order in which statements are executed in a program. The default control flow is for statements to be read and executed in order from left-to-right, top-to-bottom in a program file.
 
 Control structures such as conditionals (`if` statements and the like) alter control flow by only executing blocks of code if certain conditions are met. These structures essentially allow a program to make decisions about which code is executed as the program runs.
 
-> ## Operator 
+# Operator 
 
 JavaScript supports arithmetic operators for:
 
@@ -21,7 +21,7 @@ JavaScript supports arithmetic operators for:
 |     %=     |   x %= y  | x = x % y  |
 |     **=    |   x **= y | x = x ** y |
 
-> ## Logical Operator ||
+# Logical Operator ||
 The logical OR operator `||` checks two values and returns a boolean. If one or both values are truthy, it returns `true`. If both values are falsy, it returns `false`.
 ``` Javascript
     true || false;        // true
@@ -37,7 +37,7 @@ The logical OR operator `||` checks two values and returns a boolean. If one or 
 | true   | false  |   true   |
 | true   | true   |   true   |
 
-> ## Logical Operator &&
+# Logical Operator &&
 
 The logical `AND` operator `&&` checks two values and returns a boolean. If ***both*** values are truthy, then it returns `true`. If one, or both, of the values is falsy, then it returns `false`.
 
@@ -54,7 +54,7 @@ The logical `AND` operator `&&` checks two values and returns a boolean. If ***b
 | true   | false  |   false   |
 | true   | true   |   true   |
 
-> ## Logical Operator !
+# Logical Operator !
 
 The logical **NOT** operator `!` can be used to do one of the following:
 * Invert a *Boolean value*.
@@ -67,7 +67,7 @@ The logical **NOT** operator `!` can be used to do one of the following:
     // Prints: false
 ```
 
-> ## Comparison Operators
+# Comparison Operators
 
 Comparison operators are used to comparing two values and return `true` or `false` depending on the validity of the comparison:
 
@@ -86,7 +86,7 @@ Comparison operators are used to comparing two values and return `true` or `fals
     1 === '1'   // false
 ```
 
-> ## Truthy and Falsy
+# Truthy and Falsy
 
 In JavaScript, values evaluate to `true` or `false` when evaluated as ***Booleans***.
 
@@ -95,7 +95,7 @@ In JavaScript, values evaluate to `true` or `false` when evaluated as ***Boolean
 
 ***Note***: Falsy values include `false`, `0`, empty strings, `null undefined`, and `NaN`. *All other values are truthy*.
 
-> ## else if Clause
+# else if Clause
 
 After an initial `if` block, `else if` blocks can each check an additional condition. An optional `else` block can be added after the `else if` block(s) to run by default if none of the conditionals evaluated to truthy.
 ``` Javascript 
@@ -113,7 +113,7 @@ After an initial `if` block, `else if` blocks can each check an additional condi
     // Print: Small
 ```
 
-> ## switch Statement
+# switch Statement
 
 The `switch` statements provide a means of checking an expression against multiple `case` clauses. If a case matches, the code inside that clause is executed.
 

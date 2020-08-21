@@ -1,8 +1,8 @@
-> ## What is JavaScript?
+# What is JavaScript?
 
 JavaScript is a programming language that powers the dynamic behavior on most websites. Alongside HTML and CSS, it is a core technology that makes the web run.
 
-> ## console.log()
+# console.log()
 
 The ***console.log()*** method is used to log or print messages to the console. It can also be used to print objects and other info.
 
@@ -19,7 +19,7 @@ Use the ***console.log()*** code in the editor to log your age to the console.
 
 Run your code when you are ready to see the result.
 
-> ## Methods
+# Methods
 
 Methods return information about an object, and are called by appending an instance with a period `.`, the method name, and parentheses.
 
@@ -28,7 +28,7 @@ Methods return information about an object, and are called by appending an insta
     Math.random();
 ```
 
-> ## Libraries
+# Libraries
 
 Libraries contain methods that can be called by appending the library name with a period `.`, the method name, and a set of parentheses.
 
@@ -37,7 +37,7 @@ Libraries contain methods that can be called by appending the library name with 
 // ☝️ Math is the library
 ```
 
-> ## Data Types
+# Data Types
 
 ***Data types*** are the classifications we give to the different kinds of data that we use in programming. In JavaScript, there are seven fundamental data types.
 
@@ -77,7 +77,7 @@ The first 6 of those types are considered ***primitive data types***. They are t
 1.  In the editor, ***console.log*** all of the following: `'JavaScript', 2020, "Woowhoo! I love to code.", 4.4` to the console.
 2. 
 
-> ## Arithmetic Operators
+# Arithmetic Operators
 
 JavaScript supports arithmetic operators for:
 
@@ -100,7 +100,7 @@ JavaScript supports arithmetic operators for:
     10 % 5
 ```
 
-> ## String Interpolation
+# String Interpolation
 
 String interpolation is the process of evaluating string literals containing one or more placeholders (expressions, variables, etc).
 
@@ -115,7 +115,7 @@ It can be performed using template literals: `text ${expression} text`.
     `Tommy is ${age} years old.`;
 ```
 
-> ## Variables
+# Variables
 
 Variables are used whenever there’s a need to store a piece of data. A variable contains data that can be used in the program elsewhere. Using variables also ensures code re-usability since it can be used to replace the same value in multiple places.
 ``` Javascript
@@ -126,7 +126,7 @@ Variables are used whenever there’s a need to store a piece of data. A variabl
     // Prints: $85000 is more than the average income.
 ```
 
-> ## Learn Javascript: Variables
+# Learn Javascript: Variables
 
 A variable is a container for data that is stored in computer memory. It is referenced by a descriptive name that a programmer can call to assign a specific value and retrieve it.
 ``` Javascript
@@ -138,7 +138,7 @@ A variable is a container for data that is stored in computer memory. It is refe
     // Tammy, false, 3
 ```
 
-> ## Declaring Variables
+# Declaring Variables
 
 To declare a variable in JavaScript, any of these three keywords can be used along with a variable name:
 
@@ -152,7 +152,7 @@ To declare a variable in JavaScript, any of these three keywords can be used alo
     const numberOfFingers = 20;
 ```
 
-> ## String Concatenation
+# String Concatenation
 
 In JavaScript, multiple strings can be concatenated together using the `+` operator. In the example, multiple strings and variables containing string values have been concatenated. After execution of the code block, the `displayText` variable will contain the concatenated string.
 
@@ -164,7 +164,7 @@ In JavaScript, multiple strings can be concatenated together using the `+` opera
     // Prints: Your credit card bill is due on May 30th.
 ```
 
-> ## Template Literals
+# Template Literals
 
 Template literals are strings that allow embedded expressions, `${expression}`. While regular strings use single `'` or double `"` quotes, template literals use backticks instead.
 
