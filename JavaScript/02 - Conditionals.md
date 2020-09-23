@@ -42,17 +42,17 @@ The logical OR operator `||` checks two values and returns a boolean. If one or 
 The logical `AND` operator `&&` checks two values and returns a boolean. If ***both*** values are truthy, then it returns `true`. If one, or both, of the values is falsy, then it returns `false`.
 
 ``` Javascript
+
+    TRUE && TRUE;    // Evaluates to: TRUE
+    FALSE && TRUE;   // Evaluates to: FALSE
+    TRUE && FALSE;   // Evaluates to: FALSE
+    FALSE && FALSE;  // Evaluates to: FALSE
+
     true && true;      // true
     1 > 2 && 2 > 1;    // false
     true && false;     // false
     4 === 4 && 3 > 1;  // true
 ```
-| `A`    | `B`    | `A && B` |
-| ------ | ------ | ------   |
-| false  | false  |   true  |
-| false  | true   |   false   |
-| true   | false  |   false   |
-| true   | true   |   true   |
 
 # Logical Operator !
 
