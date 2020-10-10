@@ -70,7 +70,7 @@ covid19(arr); // return [6,4,1,1]
 
 Bạn là một chủ cửa hàng vớ (tất) vừa mới nhập về một lô hàng socks với các lượng tất theo danh sách sizes được khách hàng đặt trước. Nhưng vì một số lý do bất khả kháng mà các size tất trong socks bị lẫn lộn với nhau, hơn nữa số lượng cũng thiếu hoặc dư ra rất nhiều, hãy cho biết bạn có thể bán được tối đa bao nhiêu đôi tất trên từng size với lô hàng vừa nhập về.
 
-[socks](https://s3.amazonaws.com/hr-challenge-images/25168/1474122392-c7b9097430-sock.png)
+![socks](https://s3.amazonaws.com/hr-challenge-images/25168/1474122392-c7b9097430-sock.png)
 
 ```js
 function saleMerchandise(socks, sizes) {
