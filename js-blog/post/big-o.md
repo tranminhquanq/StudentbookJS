@@ -1,5 +1,3 @@
-# Practical Big O Notation for JavaScript Developers
-
 Big O notation is one of those things we usually learn about when we go through some kind of formal education (i.e college), otherwise the practical aspects of our day-to-day tend to overrun it and leave it as a completely secondary term that we can live without — and many of you do!
 
 With that being said, I still believe there are benefits to understanding this notation at a high level. Quickly understanding the performance implications of an algorithm is not only useful but very practical.
