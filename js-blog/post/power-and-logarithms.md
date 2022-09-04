@@ -75,4 +75,126 @@ Nhìn qua hình này ta có thể nhận ra đây vừa là ví dụ của lãi 
 
 <img width="764" alt="Screen Shot 2022-09-04 at 10 00 48 AM" src="https://user-images.githubusercontent.com/56917374/188295132-8d0e2259-6f97-490d-a3b0-18491fb23e7a.png">
 
-Vậy khi chúng ta chia lãi càng nhỏ (tới mức 10^{-9}10−9)
+Vậy khi chúng ta chia lãi càng nhỏ (tới mức 10<sup>-9</sup>), thì chúng ta sẽ đạt được **growth** càng lớn, giá trị này hội tụ lại tại **e** = 2.71828…( ~171% rate per year). **e** được gọi với cái tên: con số của sự tăng tưởng. **e** là kết quả lớn nhất có thể khi áp dụng **lãi kép liên tục** ở mức lãi 100% sau một đơn vị thời gian (lãi kép liên tục là việc chia nhỏ lãi đến mức không thể nhỏ hơn). Và hàm f(x) = e<sup>x</sup>. Một điều tuyệt vời rằng giá trị của f'(x) = e<sup>x</sup>. Một hàm tuyệt vời. Đây là hàm duy nhất tại thời điểm hiện tại có tính chất này. Thực hiện phép log với cơ số e: log<sub>e</sub><sup>x</sup> được gọi là **natural logarithm**.
+
+
+## Real exponent
+
+Làm sao để tính a<sup>b</sup> với b là số thực? Chúng ta sẽ cần tới phép **natural logarithm**, cơ số a ta có thể biểu diễn dưới dạng e<sup>x</sup> và **natural logarithm** như sau:
+
+<img width="751" alt="Screen Shot 2022-09-04 at 10 15 25 AM" src="https://user-images.githubusercontent.com/56917374/188295507-abd74de3-1831-41b6-abb7-fd639cd8d687.png">
+
+Có vẻ tới đây thì chúng ta sẽ tính e<sup>b ln a</sup> để có được kết quả của a<sup>b</sup> với b là số thực. Nhưng chúng ta lại gặp vấn đề: *ln a* có thể là số thực, và chúng ta lại quay vào vòng lẩn quẩn. Tuy nhiên ta có thể giải quyết vấn đề này nếu như cơ số là e (why it is magical) bằng công thức sau (Khai triển Taylor đối với chuỗi luỹ thừa - nhờ vào tính chất f'(x) = e<sup>x</sup> nên chúng ta mới có công thức này):
+
+<img width="758" alt="Screen Shot 2022-09-04 at 10 18 38 AM" src="https://user-images.githubusercontent.com/56917374/188295594-71803a25-a1ce-4df7-bd0b-7ef1f337b174.png">
+
+```js
+function exp(x) {
+    // depend ons how many accuracy, we need to specific fixed K, in this example
+    let k = 50;
+    let factorial = 1;
+    let exponent = 1;
+    let sum = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * x;
+        factorial = factorial * i
+        sum = sum + exponent / factorial;
+    }
+    return sum
+}
+```
+Và bây giờ chúng ta tiếp tục hoàn hiện hàm **ln a**. Theo lý thuyết thì **ln a** được định nghĩa là phần diện tích phía dưới đường cong
+
+<img src="https://sonlhcsuit.github.io/p/power/lna_hu455af0b932974b572a26e22dddb95edb_72211_1024x0_resize_box_3.png">
+
+
+Và làm sao chúng ta tính được nó khi nguyên hàm của ∫ 1/x = ln∣x∣+C . Lại một vòng lẩn quẩn mới chăng? Thực ra là chúng ta sẽ dùng cả kiến thức về chuỗi luỹ thừa, khai triển **Taylor** nữa, phương pháp **tích phân từng phần**, … Kết quả như sau:
+
+<img width="769" alt="Screen Shot 2022-09-04 at 10 27 02 AM" src="https://user-images.githubusercontent.com/56917374/188295786-84d66a84-04a1-4aa0-9a29-520a808c8541.png">
+
+```js
+function ln_upper(a) {
+    let k = 50;
+    let x = 1 - 1 / a;
+    let sum = 0;
+    let exponent = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * x;
+        sum = sum + exponent / i
+    }
+    return sum
+}
+```
+Còn đây là đối với a ≤ 1:
+
+<img src="https://sonlhcsuit.github.io/p/power/lna-proven_hu9e5ee3e7b34ab1644ea84e2afe1ca980_168408_1024x0_resize_box_3.png" />
+
+```js
+function ln_lower(a) {
+    let k = 50;
+    let u = a - 1;
+    let sum = 0;
+    let exponent = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * u;
+        sum = sum + (i % 2 == 1 ? 1 : -1) *( exponent / i)
+    }
+    return sum
+}
+```
+
+```js
+function exp(x) {
+    // depend ons how many accuracy, we need to specific fixed K, in this example
+    let k = 50;
+    let factorial = 1;
+    let exponent = 1;
+    let sum = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * x;
+        factorial = factorial * i
+        sum = sum + exponent / factorial;
+    }
+    return sum
+}
+function ln_upper(a) {
+    let k = 50;
+    let x = 1 - 1 / a;
+    let sum = 0;
+    let exponent = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * x;
+        sum = sum + exponent / i
+    }
+    return sum
+}
+function ln_lower(a) {
+    let k = 50;
+    let u = a - 1;
+    let sum = 0;
+    let exponent = 1;
+    for (let i = 1; i < k; i++) {
+        exponent = exponent * u;
+        sum = sum + (i % 2 == 1 ? 1 : -1) * (exponent / i)
+    }
+    return sum
+}
+function ln(a){
+    if (a<0) return NaN
+    if (a<=1) return ln_lower(a);
+    return ln_upper(a)
+    
+}
+
+function pow(base,deg){
+    if (base == 1 || base == 0) return base;
+    if (deg == 0) return 1;
+    if (deg == 1) return base;
+    if (isNaN(base) || isNaN(deg)) return NaN;
+    if (!isFinite(base) || !isFinite(deg)) return Infinity;
+
+    return exp(deg*ln(base));
+}
+```
+
+Tới đoạn này thì việc cài đặt một hàm trông có vẻ nhỏ như con thỏ, nhưng lại tốn rất nhiều chất xám, và khó khăn khi cài đặt. Chúng ta đã làm được việc đó rồi. (Ít nhất thì độ chính xác của chúng ta chưa cần thiết quá cao khi nói về các kiến trúc mạng)
